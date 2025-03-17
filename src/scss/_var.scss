@@ -13,3 +13,28 @@ $gradient-mix: linear-gradient(180deg, #fe280e 0%, #00ff2f 52%, #00c 100%);
 $gradient-grey: linear-gradient(180deg, #c0c0c0 0%, #a6a6a6 100%);
 
 // Variables CSS
+
+//
+@mixin bp($size) {
+  @if $size == "md" {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $size == "lg" {
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else if $size== "xl" {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else if $size== "xxl" {
+    @media (min-width: 1400px) {
+      @content;
+    }
+  } @else if $size== "sm" {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+}
