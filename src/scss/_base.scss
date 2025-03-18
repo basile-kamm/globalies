@@ -15,4 +15,13 @@ video {
 
 body {
   font-family: "helvetica";
+  overflow-x: hidden;
+}
+
+.scrolltrigger-cont {
+  overflow: hidden;
+}
+
+.spacer {
+  height: 100vh;
 }
