@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1098.3 275.5">
+  <!-- Generator: Adobe Illustrator 29.3.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 151)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #fff;
+      }
+
+      .st1 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 10px;
+      }
+    </style>
+  </defs>
+  <g id="Background">
+    <rect id="back" class="st0" x="-.2" width="1098.3" height="275.5"/>
+  </g>
+  <g id="pattern">
+    <g id="Square">
+      <rect class="st1" x="533.3" y="118.7" width="43.1" height="43.1" transform="translate(261.7 -351.2) rotate(45)"/>
+      <rect class="st1" x="504.2" y="89.6" width="101.3" height="101.3" transform="translate(261.7 -351.2) rotate(45)"/>
+      <rect class="st1" x="474.4" y="59.6" width="161.2" height="161.2" transform="translate(261.7 -351.4) rotate(45)"/>
+    </g>
+    <g id="Square1" data-name="Square">
+      <rect class="st1" x="806.9" y="118.7" width="43.1" height="43.1" transform="translate(341.8 -544.7) rotate(45)"/>
+      <rect class="st1" x="777.8" y="89.6" width="101.3" height="101.3" transform="translate(341.8 -544.7) rotate(45)"/>
+      <rect class="st1" x="748" y="59.6" width="161.2" height="161.2" transform="translate(341.9 -544.9) rotate(45)"/>
+    </g>
+    <g id="Square2" data-name="Square">
+      <rect class="st1" x="1076.5" y="118.7" width="43.1" height="43.1" transform="translate(420.8 -735.4) rotate(45)"/>
+      <rect class="st1" x="1047.4" y="89.6" width="101.3" height="101.3" transform="translate(420.8 -735.4) rotate(45)"/>
+      <rect class="st1" x="1017.7" y="59.6" width="161.2" height="161.2" transform="translate(420.8 -735.5) rotate(45)"/>
+    </g>
+    <g id="Square3" data-name="Square">
+      <rect class="st1" x="255.6" y="118.7" width="43.1" height="43.1" transform="translate(180.3 -154.9) rotate(45)"/>
+      <rect class="st1" x="226.5" y="89.6" width="101.3" height="101.3" transform="translate(180.3 -154.9) rotate(45)"/>
+      <rect class="st1" x="196.7" y="59.6" width="161.2" height="161.2" transform="translate(180.4 -155) rotate(45)"/>
+    </g>
+    <g id="Square4" data-name="Square">
+      <rect class="st1" x="393.3" y="253.9" width="43.1" height="43.1" transform="translate(316.3 -212.6) rotate(45)"/>
+      <rect class="st1" x="364.2" y="224.8" width="101.3" height="101.3" transform="translate(316.3 -212.6) rotate(45)"/>
+      <rect class="st1" x="334.4" y="194.9" width="161.2" height="161.2" transform="translate(316.3 -212.8) rotate(45)"/>
+    </g>
+    <g id="Square5" data-name="Square">
+      <rect class="st1" x="666.9" y="253.9" width="43.1" height="43.1" transform="translate(396.4 -406.1) rotate(45)"/>
+      <rect class="st1" x="637.8" y="224.8" width="101.3" height="101.3" transform="translate(396.4 -406.1) rotate(45)"/>
+      <rect class="st1" x="608" y="194.9" width="161.2" height="161.2" transform="translate(396.5 -406.3) rotate(45)"/>
+    </g>
+    <g id="Square6" data-name="Square">
+      <rect class="st1" x="936.5" y="253.9" width="43.1" height="43.1" transform="translate(475.4 -596.8) rotate(45)"/>
+      <rect class="st1" x="907.4" y="224.8" width="101.3" height="101.3" transform="translate(475.4 -596.8) rotate(45)"/>
+      <rect class="st1" x="877.7" y="194.9" width="161.2" height="161.2" transform="translate(475.4 -596.9) rotate(45)"/>
+    </g>
+    <g id="Square7" data-name="Square">
+      <rect class="st1" x="115.6" y="253.9" width="43.1" height="43.1" transform="translate(234.9 -16.3) rotate(45)"/>
+      <rect class="st1" x="86.5" y="224.8" width="101.3" height="101.3" transform="translate(234.9 -16.3) rotate(45)"/>
+      <rect class="st1" x="56.7" y="194.9" width="161.2" height="161.2" transform="translate(235 -16.4) rotate(45)"/>
+    </g>
+    <g id="Square8" data-name="Square">
+      <rect class="st1" x="393.3" y="-21.5" width="43.1" height="43.1" transform="translate(121.5 -293.3) rotate(45)"/>
+      <rect class="st1" x="364.2" y="-50.6" width="101.3" height="101.3" transform="translate(121.5 -293.3) rotate(45)"/>
+      <rect class="st1" x="334.4" y="-80.6" width="161.2" height="161.2" transform="translate(121.6 -293.5) rotate(45)"/>
+    </g>
+    <g id="Square9" data-name="Square">
+      <rect class="st1" x="666.9" y="-21.5" width="43.1" height="43.1" transform="translate(201.6 -486.8) rotate(45)"/>
+      <rect class="st1" x="637.8" y="-50.6" width="101.3" height="101.3" transform="translate(201.6 -486.8) rotate(45)"/>
+      <rect class="st1" x="608" y="-80.6" width="161.2" height="161.2" transform="translate(201.7 -486.9) rotate(45)"/>
+    </g>
+    <g id="Square10" data-name="Square">
+      <rect class="st1" x="936.5" y="-21.5" width="43.1" height="43.1" transform="translate(280.6 -677.4) rotate(45)"/>
+      <rect class="st1" x="907.4" y="-50.6" width="101.3" height="101.3" transform="translate(280.6 -677.4) rotate(45)"/>
+      <rect class="st1" x="877.7" y="-80.6" width="161.2" height="161.2" transform="translate(280.7 -677.6) rotate(45)"/>
+    </g>
+    <g id="Square11" data-name="Square">
+      <rect class="st1" x="115.6" y="-21.5" width="43.1" height="43.1" transform="translate(40.2 -97) rotate(45)"/>
+      <rect class="st1" x="86.5" y="-50.6" width="101.3" height="101.3" transform="translate(40.2 -97) rotate(45)"/>
+      <rect class="st1" x="56.7" y="-80.6" width="161.2" height="161.2" transform="translate(40.2 -97.1) rotate(45)"/>
+    </g>
+    <g id="Square12" data-name="Square">
+      <rect class="st1" x="-21.8" y="118.7" width="43.1" height="43.1" transform="translate(99.1 41.2) rotate(45)"/>
+      <rect class="st1" x="-50.8" y="89.6" width="101.3" height="101.3" transform="translate(99.1 41.2) rotate(45)"/>
+      <rect class="st1" x="-80.6" y="59.6" width="161.2" height="161.2" transform="translate(99.2 41.1) rotate(45)"/>
+    </g>
+  </g>
+</svg>

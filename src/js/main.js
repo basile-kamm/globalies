@@ -13,13 +13,37 @@ document.addEventListener("DOMContentLoaded", function () {
     const randomXElem = document.querySelectorAll(".random-x");
     const cardsScore = document.querySelectorAll(".showcase-card-score");
 
-    gsap.set(randomXElem, {
-      translateX: () => Math.random() * 400 - 200,
-    });
+    if (window.innerWidth < 768) {
+      gsap.set(randomXElem, {
+        translateX: () => Math.random() * 60 - 30,
+      });
+    } else {
+      gsap.set(randomXElem, {
+        translateX: () => Math.random() * 400 - 200,
+      });
+    }
 
     gsap.set(cardsScore, {
       rotate: () => Math.random() * 40 - 20,
     });
+
+    // alternative random placement
+
+    const alternative = document.querySelectorAll(".marque-alternative");
+
+    if (alternative) {
+      if (window.innerWidth < 768) {
+        gsap.set(alternative, {
+          translateX: () => Math.random() * 100 - 50,
+          translateY: () => Math.random() * 40 - 20,
+        });
+      } else {
+        gsap.set(alternative, {
+          translateX: () => Math.random() * 100 - 50,
+          translateY: () => Math.random() * 100 - 50,
+        });
+      }
+    }
   }
 
   // Main scrollTrigger
