@@ -10,10 +10,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   {
     // card random placement
-    const cards = document.querySelectorAll(".showcase-card");
+    const randomXElem = document.querySelectorAll(".random-x");
     const cardsScore = document.querySelectorAll(".showcase-card-score");
 
-    gsap.set(cards, {
+    gsap.set(randomXElem, {
       translateX: () => Math.random() * 400 - 200,
     });
 

@@ -6,7 +6,8 @@
     "clean:output": "rimraf dist",
     "clean:cache": "rimraf .parcel-cache",
     "dev": "npm run clean:cache && parcel src/index.html",
-    "build": "npm run clean:output && parcel build src/index.html --public-url '.' --no-cache"
+    "build": "npm run clean:output && parcel build src/index.html --public-url '.' --no-cache",
+    "wp-build": "rimraf ../../wp_globalies/wp-content/themes/globalies-theme/dist && parcel build src/index.html --no-optimize --dist-dir '../../wp_globalies/wp-content/themes/globalies-theme/dist'  --public-url '.' --no-cache"
   },
   "repository": {
     "type": "git",
