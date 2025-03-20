@@ -11,12 +11,34 @@ $yellow: #fdfd43;
 
 :root {
   --main-score-color: #fe280e;
+  --solo-score-color: #ff9f38;
+}
+
+.low {
+  --main-score-color: #fe280e !important;
+}
+.mid {
+  --main-score-color: #ff9f38 !important;
+}
+.high {
+  --main-score-color: #00ff2f !important;
+}
+
+.solo-low {
+  --solo-score-color: #fe280e !important;
+}
+.solo-mid {
+  --solo-score-color: #ff9f38 !important;
+}
+.solo-high {
+  --solo-score-color: #00ff2f !important;
 }
 
 // GRADIENTS
 $gradient-blue: linear-gradient(0deg, #b3d8eb 0%, #f3fdff 100%);
 $gradient-mix: linear-gradient(180deg, #fe280e 0%, #00ff2f 52%, #00c 100%);
 $gradient-grey: linear-gradient(180deg, #c0c0c0 0%, #a6a6a6 100%);
+$gradient-red: linear-gradient(0deg, #d91414 0%, #fd8e8e 100%);
 
 // Variables CSS
 

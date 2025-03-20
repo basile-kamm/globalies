@@ -8,6 +8,34 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".header-container").classList.toggle("open");
   };
 
+  let windowWidth =
+    window.innerWidth ||
+    document.documentElement.clientWidth ||
+    document.body.clientWidth;
+  const mobileHeader = document.querySelector(".header-container.mobile");
+  const desktopHeader = document.querySelector(".header-container.desktop");
+  window.addEventListener("resize", () => {
+    windowWidthChange();
+  });
+
+  function windowWidthChange() {
+    windowWidth =
+      window.innerWidth ||
+      document.documentElement.clientWidth ||
+      document.body.clientWidth;
+    console.log(windowWidth);
+
+    if (windowWidth < 768) {
+      mobileHeader.style.display = "flex";
+      desktopHeader.style.display = "none";
+    } else {
+      mobileHeader.style.display = "none";
+      desktopHeader.style.display = "flex";
+    }
+  }
+
+  windowWidthChange();
+
   {
     // card random placement
     const randomXElem = document.querySelectorAll(".random-x");
@@ -29,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // alternative random placement
 
-    const alternative = document.querySelectorAll(".marque-alternative");
+    const alternative = document.querySelectorAll(".single-alternative");
 
     if (alternative) {
       if (window.innerWidth < 768) {

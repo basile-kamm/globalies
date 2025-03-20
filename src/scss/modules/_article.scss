@@ -64,6 +64,8 @@
   align-self: flex-end;
   margin: 5vh 2vw 0 0;
   opacity: 0.6;
+  position: relative;
+  z-index: 3;
 
   &:hover {
     opacity: 1;

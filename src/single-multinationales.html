@@ -8,16 +8,16 @@
   </head>
   <body>
     <!-- Header -->
-    <header class="header-container desktop">
+    <!-- <header class="header-container">
       <h1 class="header-h1"><a href="index.html">GlobaLies</a></h1>
       <nav class="header-nav">
         <a href="" class="header-nav-item">marques</a>
         <a href="" class="header-nav-item">multinationales</a>
         <a href="" class="header-nav-item">utopie?</a>
       </nav>
-    </header>
+    </header> -->
     <!-- mobile -->
-    <header class="header-container mobile">
+    <header class="header-container">
       <div class="header-mobile-navbar">
         <h1 class="header-h1"><a href="index.html">GlobaLies</a></h1>
         <button aria-label="Open menu" onclick="openMenu()" class="header-btn">
@@ -43,8 +43,8 @@
 
     <main class="mid">
       <section class="single-hero-cont">
-        <h2 class="single-hero-siege-social">Marque de glace</h2>
-        <h1 class="single-hero-title">Hirz</h1>
+        <h2 class="single-hero-siege-social">Siège social à Vevey</h2>
+        <h1 class="single-hero-title">Nestlé</h1>
         <div class="single-hero-score-cont">
           <div class="single-hero-score-line">
             <p class="single-hero-score">79</p>
@@ -68,37 +68,48 @@
         <div class="single-hero-tiles"></div>
       </section>
       <section class="single-content">
-        <div class="single-pattern-container"></div>
+        <div class="single-pattern-container sous-marque"></div>
         <div class="single-bg"></div>
         <section class="single-notation-section">
           <div class="single-notation-critere-cont">
             <h2 class="single-notation-critere-titles">Critères de notation</h2>
             <div class="single-notation-criteres">
-              <div class="single-notation-critere">
+              <div class="single-notation-critere solo-low">
+                <p class="single-notation-critere-label">impact écologique</p>
+                <p class="single-notation-critere-score">74</p>
+              </div>
+              <div class="single-notation-critere solo-mid">
                 <p class="single-notation-critere-label">impact écologique</p>
                 <p class="single-notation-critere-score">74</p>
               </div>
             </div>
           </div>
-          <a href="" class="single-multinationale-thumbnail">
-            <p class="single-multinationale-score">22</p>
-            <p class="single-multinationale-name">Nestlé</p>
-            <p class="single-multinationale-text">
-              Cette <br />
-              marque <br />
-              : appartient à
-            </p>
-            <img
-              src="asset/img/background-gouille.png?as=webp&width=300"
-              alt=""
-              class="single-multinationale-img"
-            />
-            <img
-              src="asset/img/logo/nestle.png?as=webp"
-              alt=""
-              class="single-multinationale-img logo"
-            />
-          </a>
+          <div class="single-notation-critere-cont juridique">
+            <h2 class="single-notation-critere-titles">Situation juridique</h2>
+            <div class="single-notation-juridique-cont">
+              <a href="" class="single-notation-juridique">
+                <p class="single-notation-juridique-icon">🇬🇦</p>
+                <div class="single-notation-juridique-texts">
+                  <div class="single-notation-juridique-line">
+                    <p class="single-notation-juridique-type">3 procès</p>
+                    <p class="single-notation-juridique-place">au Gabon</p>
+                  </div>
+                  <p class="single-notation-juridique-cta">en savoir plus</p>
+                </div>
+              </a>
+              <a href="" class="single-notation-juridique">
+                <p class="single-notation-juridique-icon">🇬🇦</p>
+                <div class="single-notation-juridique-texts">
+                  <div class="single-notation-juridique-line">
+                    <p class="single-notation-juridique-type">24 plaintes</p>
+                    <p class="single-notation-juridique-place">au Gabon</p>
+                  </div>
+                  <p class="single-notation-juridique-cta">en savoir plus</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
           <div class="single-notation-transi"></div>
           <div class="single-notation-transi reverse"></div>
         </section>
@@ -153,7 +164,7 @@
 
         <section class="single-alternative-section">
           <div class="single-alternative-content">
-            <h2 class="single-alternative-section-title">Alternatives</h2>
+            <h2 class="single-alternative-section-title">Sous-marques</h2>
             <div class="single-alternative-cont">
               <a href="" class="single-alternative">
                 <h3 class="single-alternative-title">Robert & CO</h3>
@@ -191,12 +202,12 @@
           <img
             src="asset/img/coline-fade.png?as=webp"
             alt=""
-            class="single-alternative-fade"
+            class="single-alternative-fade sous-marque"
           />
           <img
-            src="asset/img/coline.png?as=webp"
+            src="asset/img/supermarche.png?as=webp"
             alt=""
-            class="single-alternative-bg"
+            class="single-alternative-bg sous-marque"
           />
         </section>
       </section>
