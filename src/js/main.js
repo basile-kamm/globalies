@@ -8,6 +8,21 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".header-container").classList.toggle("open");
   };
 
+  const singleLogo = document.querySelector(".single-hero-tiles");
+
+  console.log(singleLogo);
+  if (singleLogo) {
+    const singleLogoUrl = singleLogo.getAttribute("data-logo-url");
+
+    if (singleLogoUrl) {
+      singleLogo.style.backgroundImage = `url(${singleLogoUrl})`;
+    } else {
+      console.log("L'attribut data-logo-url est manquant !");
+    }
+  } else {
+    console.log("Élément .single-hero-tiles introuvable !");
+  }
+
   let windowWidth =
     window.innerWidth ||
     document.documentElement.clientWidth ||
@@ -23,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
       window.innerWidth ||
       document.documentElement.clientWidth ||
       document.body.clientWidth;
-    console.log(windowWidth);
 
     if (windowWidth < 768) {
       mobileHeader.style.display = "flex";

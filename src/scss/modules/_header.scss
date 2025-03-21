@@ -21,6 +21,15 @@
 .header-h1 {
   font-family: "pixeloid";
   font-size: 1.5rem;
+
+  a {
+    transition: 0.3s;
+  }
+
+  &:hover a {
+    text-decoration-thickness: 4px;
+    letter-spacing: 5px;
+  }
 }
 
 .header-nav {
@@ -28,6 +37,29 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
+
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 5px solid $blue;
+  background: $gradient-blue;
+  box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.25);
+
+  &:hover {
+    .header-nav-item {
+      &:hover {
+        text-decoration-thickness: 4px;
+        transform: translateY(-10%);
+      }
+
+      &:not(:hover) {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+.header-nav-item {
+  transition: 0.4s;
 }
 
 .header-nav-mobile {

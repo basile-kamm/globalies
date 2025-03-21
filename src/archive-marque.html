@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>GlobaLies</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="scss/main.scss" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header-container desktop">
+      <h1 class="header-h1"><a href="index.html">GlobaLies</a></h1>
+      <nav class="header-nav">
+        <a href="" class="header-nav-item">marques</a>
+        <a href="" class="header-nav-item">multinationales</a>
+        <a href="" class="header-nav-item">utopie?</a>
+      </nav>
+    </header>
+    <!-- mobile -->
+    <header class="header-container mobile">
+      <div class="header-mobile-navbar">
+        <h1 class="header-h1"><a href="index.html">GlobaLies</a></h1>
+        <button aria-label="Open menu" onclick="openMenu()" class="header-btn">
+          <svg
+            width="13"
+            height="26"
+            viewBox="0 0 13 26"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M0.499999 13L13 0.5L13 25.5L0.499999 13Z" fill="black" />
+          </svg>
+        </button>
+      </div>
+      <nav class="header-nav-mobile">
+        <a href="single-marque.html" class="header-nav-item">marques</a>
+        <a href="single-multinationales.html" class="header-nav-item"
+          >multinationales</a
+        >
+        <a href="" class="header-nav-item">utopie?</a>
+      </nav>
+    </header>
+
+    <main class="mid">
+      <div class="archive-content">
+        <div class="archive-content-bg"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-2">
+              <div class="filters-cont">
+                <div class="filters-box research">
+                  <h2 class="filters-box-title">Rechercher...</h2>
+                </div>
+                <div class="filters-box trier">
+                  <h2 class="filters-box-title">Trier</h2>
+                </div>
+                <div class="filters-box filtrer">
+                  <h2 class="filters-box-title">Filter</h2>
+                </div>
+                <div class="filters-box pagination"></div>
+              </div>
+            </div>
+            <div class="col-10">
+              <div class="archive-title-cont">
+                <h1 class="archive-title main">Marques</h1>
+                <p class="archive-title difference">Marques</p>
+              </div>
+              <div class="archives-cont">
+                <a href="" class="archive-item">
+                  <h3 class="archive-item-title">Robert & CO</h3>
+                  <p class="archive-item-type">Alternative a la viande</p>
+                  <p class="archive-item-situation">Marque indépendante</p>
+                  <div class="archive-item-score">
+                    <p>79</p>
+                    <p>79</p>
+                    <p>79</p>
+                    <p>79</p>
+                  </div>
+                </a>
+                <a href="" class="archive-item solo-low">
+                  <h3 class="archive-item-title">Robert & CO</h3>
+                  <p class="archive-item-type">Marque indépendante</p>
+                  <p class="archive-item-situation">Sous-marque de nestlé</p>
+
+                  <div class="archive-item-score">
+                    <p>79</p>
+                    <p>79</p>
+                    <p>79</p>
+                    <p>79</p>
+                  </div>
+                </a>
+                <a href="" class="archive-item">
+                  <h3 class="archive-item-title">Robert & CO</h3>
+                  <p class="archive-item-type">Marque indépendante</p>
+                  <div class="archive-item-score">
+                    <p>79</p>
+                    <p>79</p>
+                    <p>79</p>
+                    <p>79</p>
+                  </div>
+                </a>
+                <a href="" class="archive-item">
+                  <h3 class="archive-item-title">Robert & CO</h3>
+                  <p class="archive-item-type">Marque indépendante</p>
+                  <div class="archive-item-score">
+                    <p>79</p>
+                    <p>79</p>
+                    <p>79</p>
+                    <p>79</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="archive-bg-cont">
+        <img src="asset/img/usine-2.jpg?as=webp" alt="" class="archive-bg" />
+      </div>
+    </main>
+    <script src="js/main.js" type="module"></script>
+  </body>
+</html>

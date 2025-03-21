@@ -11,27 +11,36 @@ $yellow: #fdfd43;
 
 :root {
   --main-score-color: #fe280e;
+  --main-score-gradient: linear-gradient(0deg, #ef9416 0%, #fed78f 100%);
+
   --solo-score-color: #ff9f38;
+  --solo-score-gradient: linear-gradient(0deg, #ef9416 0%, #fed78f 100%);
 }
 
 .low {
   --main-score-color: #fe280e !important;
+  --main-score-gradient: linear-gradient(0deg, #d91414 0%, #fd8e8e 100%);
 }
 .mid {
   --main-score-color: #ff9f38 !important;
+  --main-score-gradient: linear-gradient(0deg, #ef9416 0%, #fed78f 100%);
 }
 .high {
   --main-score-color: #00ff2f !important;
+  --main-score-gradient: linear-gradient(0deg, #28c33a 0%, #acfcbc 100%);
 }
 
 .solo-low {
   --solo-score-color: #fe280e !important;
+  --solo-score-gradient: linear-gradient(0deg, #d91414 0%, #fd8e8e 100%);
 }
 .solo-mid {
   --solo-score-color: #ff9f38 !important;
+  --solo-score-gradient: linear-gradient(0deg, #ef9416 0%, #fed78f 100%);
 }
 .solo-high {
   --solo-score-color: #00ff2f !important;
+  --solo-score-gradient: linear-gradient(0deg, #28c33a 0%, #acfcbc 100%);
 }
 
 // GRADIENTS
