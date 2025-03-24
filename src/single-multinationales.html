@@ -8,38 +8,7 @@
   </head>
   <body>
     <!-- Header -->
-    <!-- <header class="header-container">
-      <h1 class="header-h1"><a href="index.html">GlobaLies</a></h1>
-      <nav class="header-nav">
-        <a href="" class="header-nav-item">marques</a>
-        <a href="" class="header-nav-item">multinationales</a>
-        <a href="" class="header-nav-item">utopie?</a>
-      </nav>
-    </header> -->
-    <!-- mobile -->
-    <header class="header-container">
-      <div class="header-mobile-navbar">
-        <h1 class="header-h1"><a href="index.html">GlobaLies</a></h1>
-        <button aria-label="Open menu" onclick="openMenu()" class="header-btn">
-          <svg
-            width="13"
-            height="26"
-            viewBox="0 0 13 26"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M0.499999 13L13 0.5L13 25.5L0.499999 13Z" fill="black" />
-          </svg>
-        </button>
-      </div>
-      <nav class="header-nav-mobile">
-        <a href="single-marque.html" class="header-nav-item">marques</a>
-        <a href="single-multinationales.html" class="header-nav-item"
-          >multinationales</a
-        >
-        <a href="" class="header-nav-item">utopie?</a>
-      </nav>
-    </header>
+    <include src="header.html"></include>
 
     <main class="mid">
       <section class="single-hero-cont">
@@ -65,7 +34,10 @@
           alt=""
           class="single-hero-img"
         />
-        <div class="single-hero-tiles"></div>
+        <div
+          class="single-hero-tiles"
+          data-logo-url="asset/img/logo/nestlé-logo"
+        ></div>
       </section>
       <section class="single-content">
         <div class="single-pattern-container sous-marque"></div>
@@ -198,7 +170,10 @@
               </a>
             </div>
           </div>
-          <a href="" class="single-alternative-corr">Suggérer une correction</a>
+          <h3 class="single-alternative-blank">Ildasdhkjhasd</h3>
+          <a href="" class="single-alternative-corr sous-marque"
+            >Suggérer une correction</a
+          >
           <img
             src="asset/img/coline-fade.png?as=webp"
             alt=""

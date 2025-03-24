@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
         trigger: hero,
         start: "top top",
         end: "center top",
-        markers: true,
+
         scrub: 1,
         pin: true,
         anticipatePin: 1,
@@ -156,17 +156,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Changing background scrolltrigger
   {
-    const utopiaCont = document.querySelector(".utopia-cont");
+    const footerCont = document.querySelector(".footer-cont");
 
-    gsap.to(utopiaCont, {
+    gsap.to(footerCont, {
       scrollTrigger: {
-        trigger: utopiaCont,
-        start: "top top",
-        end: "bottom top",
-        scrub: 1,
-        markers: true,
+        trigger: ".utopia-img-transition.tractor",
+        start: "bottom top",
+        end: "bottom bottom",
+        // markers: true,
+        scrub: true,
       },
-      backgroundColor: "#fff",
+      display: "block",
     });
   }
 });

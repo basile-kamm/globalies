@@ -56,6 +56,13 @@
   text-decoration: underline;
 }
 
+.article-blank {
+  color: $light;
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 5vh;
+}
+
 .article-cta-btn {
   background: rgba($light, 0.7);
   padding: 10px;
@@ -66,6 +73,11 @@
   opacity: 0.6;
   position: relative;
   z-index: 3;
+
+  &.center {
+    align-self: unset;
+    margin-bottom: 10vh;
+  }
 
   &:hover {
     opacity: 1;
@@ -97,5 +109,8 @@
 
   .article-cta-btn {
     font-size: 1.2vw;
+  }
+  .article-blank {
+    font-size: 32px;
   }
 }

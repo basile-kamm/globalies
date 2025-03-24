@@ -8,38 +8,7 @@
   </head>
   <body>
     <!-- Header -->
-    <header class="header-container desktop">
-      <h1 class="header-h1"><a href="index.html">GlobaLies</a></h1>
-      <nav class="header-nav">
-        <a href="" class="header-nav-item">marques</a>
-        <a href="" class="header-nav-item">multinationales</a>
-        <a href="" class="header-nav-item">utopie?</a>
-      </nav>
-    </header>
-    <!-- mobile -->
-    <header class="header-container mobile">
-      <div class="header-mobile-navbar">
-        <h1 class="header-h1"><a href="index.html">GlobaLies</a></h1>
-        <button aria-label="Open menu" onclick="openMenu()" class="header-btn">
-          <svg
-            width="13"
-            height="26"
-            viewBox="0 0 13 26"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M0.499999 13L13 0.5L13 25.5L0.499999 13Z" fill="black" />
-          </svg>
-        </button>
-      </div>
-      <nav class="header-nav-mobile">
-        <a href="single-marque.html" class="header-nav-item">marques</a>
-        <a href="single-multinationales.html" class="header-nav-item"
-          >multinationales</a
-        >
-        <a href="" class="header-nav-item">utopie?</a>
-      </nav>
-    </header>
+    <include src="header.html"></include>
 
     <main class="mid">
       <section class="single-hero-cont">
@@ -65,7 +34,7 @@
           alt=""
           class="single-hero-img"
         />
-        <div class="single-hero-tiles" data-logo-url="../img/hirz.png"></div>
+        <div class="single-hero-tiles"></div>
       </section>
       <section class="single-content">
         <div class="single-pattern-container"></div>
@@ -94,7 +63,7 @@
               class="single-multinationale-img"
             />
             <img
-              src="asset/img/logo/nestle.png?as=webp"
+              src="asset/img/logo/nestle-logo.png?as=webp"
               alt=""
               class="single-multinationale-img logo"
             />
@@ -105,6 +74,9 @@
         <section class="article-section">
           <h2 class="article-section-title">Articles liés</h2>
           <div class="articles-cont">
+            <h3 class="article-blank">
+              Il n’y pas encore d’article lié à cette marque...
+            </h3>
             <a href="" class="article random-x">
               <img
                 src="asset/img/bottle.jpg?as=webp&width=200"
@@ -147,7 +119,7 @@
                 <p class="article-date">Il y a 2 semaines</p>
               </div>
             </a>
-            <a href="" class="article-cta-btn"> Suggérer un article </a>
+            <a href="" class="article-cta-btn center"> Suggérer un article </a>
           </div>
         </section>
 
@@ -187,7 +159,9 @@
               </a>
             </div>
           </div>
-          <a href="" class="single-alternative-corr">Suggérer une correction</a>
+          <a href="" class="single-alternative-corr sous-marque"
+            >Suggérer une correction</a
+          >
           <img
             src="asset/img/coline-fade.png?as=webp"
             alt=""
