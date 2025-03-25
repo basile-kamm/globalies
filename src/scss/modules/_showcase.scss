@@ -16,9 +16,9 @@
   align-items: baseline;
   width: 75vw;
 
-  position: fixed;
+  position: absolute;
   z-index: 2;
-  top: 48vh;
+  top: 55vh;
   left: 50%;
   transform: translateX(-50%);
   padding: 10px 16px;
@@ -44,40 +44,45 @@
   z-index: 2;
 
   gap: 1vh;
+  row-gap: 5vh;
+  width: 100%;
   // transform: translateY(-20vh);
   margin-top: -50vh;
 
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
 
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0 3vw;
   align-items: center;
 }
 
 .showcase-background-gradient {
   position: absolute;
   inset: 0;
-  background: $gradient-mix;
+  background: linear-gradient(180deg, var(--gradientColors));
   mix-blend-mode: difference;
 }
 
 .showcase-card {
   position: relative;
   z-index: 5;
-  background: $red;
-
+  background: var(--solo-score-gradient);
+  text-decoration: none;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  width: 50vw;
+  width: 45vw;
   padding: 2vh 3vw;
   position: relative;
-  transition: 0.3s;
+  transition: border-radius 0.5s;
   cursor: pointer;
 
   &:hover {
-    border-radius: 20%;
+    transition: border-radius 5s;
+    border-radius: 50%;
+    mix-blend-mode: hard-light;
 
     .showcase-card-cta {
       max-width: 100px;
@@ -100,6 +105,7 @@
   width: 10vw;
   height: 25%;
   rotate: 15deg;
+  opacity: 0.8;
 }
 
 .showcase-card-title-cont {
@@ -113,6 +119,7 @@
   overflow: hidden;
   white-space: nowrap;
   transition: max-width 0.3s 0.2s;
+  text-decoration: dotted underline;
 }
 
 .showcase-card-title {
@@ -126,7 +133,7 @@
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translateY(-50%);
+  transform: translateY(20%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -144,7 +151,7 @@
   position: absolute;
   z-index: 1;
 
-  color: var(--color-orange, #ff9f38);
+  color: var(--solo-score-color);
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: $dark;
   font-family: "Pixeloid";
@@ -161,6 +168,7 @@
 .showcase-card-brand {
   display: flex;
   position: relative;
+  z-index: 1;
 
   padding: 1vh 1vw;
   flex-direction: column;
@@ -168,10 +176,7 @@
 
   border-radius: 6px;
   border: 12px solid rgba($dark, 0.9);
-  background: var(
-    --gradient-red,
-    linear-gradient(0deg, #d91414 0%, #fd8e8e 100%)
-  );
+  background: var(--solo-score-gradient);
   box-shadow: 0px 0px 40px 0px rgba($white, 0.75);
 }
 
@@ -179,9 +184,9 @@
   color: $white;
   text-shadow: 0px 2.554px 6.386px rgba(0, 0, 0, 0.36);
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: var(--color-orange, #ff9f38);
+  -webkit-text-stroke-color: var(--solo-score-color);
   font-family: "Pixeloid";
-  font-size: 3vw;
+  font-size: 2.5vw;
   z-index: 1;
 }
 

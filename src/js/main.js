@@ -50,20 +50,44 @@ document.addEventListener("DOMContentLoaded", function () {
 
   windowWidthChange();
 
+  document.addEventListener("mousemove", (event) => {
+    const { clientX, clientY } = event;
+    const { innerWidth, innerHeight } = window;
+
+    // Normalize mouse position between 0 and 1
+    const xRatio = clientX / innerWidth;
+    const yRatio = clientY / innerHeight;
+
+    // Map ratios to color stops
+    const color1 = `rgb(${255 * xRatio}, 40, 14)`;
+    const color2 = `rgb(0, ${255 * yRatio}, 47)`;
+    const color3 = `rgb(0, 0, ${255 * (1 - xRatio)})`;
+
+    // Update the CSS variable
+    document.documentElement.style.setProperty(
+      "--gradientColors",
+      `${color1} 0%, ${color2} 52%, ${color3} 100%`
+    );
+  });
+
   {
     // card random placement
     const randomXElem = document.querySelectorAll(".random-x");
-    const cardsScore = document.querySelectorAll(".showcase-card-score");
+    const cardsScore = document.querySelectorAll(".showcase-card-score-cont");
 
-    if (window.innerWidth < 768) {
-      gsap.set(randomXElem, {
-        translateX: () => Math.random() * 60 - 30,
-      });
-    } else {
-      gsap.set(randomXElem, {
-        translateX: () => Math.random() * 400 - 200,
-      });
-    }
+    gsap.set(randomXElem, {
+      translateX: () => Math.random() * 60 - 30,
+      translateY: () => Math.random() * 60 - 30,
+    });
+    // if (window.innerWidth < 768) {
+    //   gsap.set(randomXElem, {
+    //     translateX: () => Math.random() * 60 - 30,
+    //   });
+    // } else {
+    //   gsap.set(randomXElem, {
+    //     translateX: () => Math.random() * 400 - 200,
+    //   });
+    // }
 
     gsap.set(cardsScore, {
       rotate: () => Math.random() * 40 - 20,
@@ -131,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
     tl.to(
       hero,
       {
-        scale: 6,
+        scale: 7,
         rotate: "20deg",
         duration: 2,
       },
@@ -142,10 +166,10 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         y: 0,
         scale: 0.6,
-        opacity: 0.5,
+        opacity: 0.7,
       },
       {
-        y: -500,
+        // y: -100,
         duration: 3,
         scale: 3,
         opacity: 1,
