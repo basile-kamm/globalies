@@ -23,12 +23,13 @@
   font-size: 1.5rem;
 
   a {
-    transition: 0.3s;
+    transition: letter-spacing 0.3s;
   }
 
   &:hover a {
-    text-decoration-thickness: 4px;
+    // text-decoration-thickness: 4px;
     letter-spacing: 5px;
+    color: $red;
   }
 }
 
@@ -48,7 +49,6 @@
     .header-nav-item {
       &:hover {
         text-decoration-thickness: 4px;
-        transform: translateY(-10%);
       }
 
       &:not(:hover) {
@@ -59,7 +59,7 @@
 }
 
 .header-nav-item {
-  transition: 0.4s;
+  transition: opacity 0.2s;
 }
 
 .header-nav-mobile {
