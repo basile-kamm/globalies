@@ -85,10 +85,17 @@
 }
 
 .filters-box-pagination-elem {
+  color: $light;
   font-size: 12px;
+  background: none;
+  border: none;
 
   &.text {
     font-size: 10px;
     text-decoration: underline;
+  }
+
+  &.disabled {
+    opacity: 0.6;
   }
 }

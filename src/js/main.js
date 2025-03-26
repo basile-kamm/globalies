@@ -50,6 +50,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
   windowWidthChange();
 
+  // title size full width
+  const title = document.querySelector(".single-hero-title");
+
+  let fontSize = 1; // Taille initiale en vw
+  const maxFontSize = 30; // Taille maximale en vw
+
+  console.log(title.offsetWidth, window.innerWidth);
+  // Applique une taille initiale très basse pour éviter un effet de clignotement
+  title.style.fontSize = fontSize + "vw";
+
+  // Ajustement progressif
+  while (fontSize <= maxFontSize) {
+    title.style.fontSize = fontSize + "vw";
+
+    // Vérifie si l'élément dépasse la largeur de la fenêtre
+    if (title.offsetWidth >= windowWidth) {
+      fontSize -= 1; // Revenir à la dernière taille correcte
+      title.style.fontSize = fontSize + "vw";
+      break;
+    }
+
+    fontSize += 0.1;
+  }
+
+  // Mouse tracker for gradient changes
   document.addEventListener("mousemove", (event) => {
     const { clientX, clientY } = event;
     const { innerWidth, innerHeight } = window;

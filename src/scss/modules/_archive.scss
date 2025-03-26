@@ -37,6 +37,9 @@
     font-size: 130px;
     font-weight: 400;
     z-index: 1;
+    &.multi {
+      font-size: 100px;
+    }
   }
 
   &.difference {
@@ -45,6 +48,9 @@
     font-weight: 700;
 
     mix-blend-mode: difference;
+    &.multi {
+      font-size: 150px;
+    }
   }
 }
 
