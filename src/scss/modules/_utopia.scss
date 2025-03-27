@@ -43,7 +43,7 @@
 
 .utopia-title {
   font-family: "Pixeloid";
-  font-size: 74px;
+  font-size: 40px;
   font-weight: 400;
   transform: translateX(50%);
 }
@@ -52,7 +52,7 @@
   color: $red;
 
   font-family: Helvetica;
-  font-size: 54px;
+  font-size: 36px;
   transform: translateX(-50%);
   mix-blend-mode: difference;
 }
@@ -64,9 +64,9 @@
 }
 
 .utopia-text {
-  font-size: 20px;
+  font-size: 16px;
   line-height: 140%;
-  margin-left: 10vw;
+  margin-left: 3vw;
   margin-bottom: 20vh;
   z-index: 1;
   position: relative;
@@ -80,7 +80,7 @@
   span {
     font-style: normal;
     font-family: "inspiration";
-    font-size: 28px;
+    font-size: 24px;
   }
   &.right {
     text-align: right;
@@ -93,7 +93,7 @@
     font-family: "Pixeloid ";
     color: $red;
     font-size: 28px;
-    margin-right: 15vw;
+    margin-right: 1vw;
     margin-bottom: 25vh;
   }
 
@@ -104,6 +104,34 @@
 
   &.center {
     align-self: center;
-    margin-bottom: 35vh;
+    margin-bottom: 15vh;
+  }
+}
+
+@include bp("md") {
+  .utopia-title {
+    font-size: 5vw;
+  }
+
+  .utopia-dystitle {
+    font-size: 4.5vw;
+  }
+
+  .utopia-text {
+    font-size: 1.5vw;
+    margin-left: 10vw;
+
+    span {
+      font-size: 2.2vw;
+    }
+
+    &.highlight {
+      margin-right: 15vw;
+      font-size: 1.7vw;
+    }
+
+    &.center {
+      margin-left: 10vw;
+    }
   }
 }

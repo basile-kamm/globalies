@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 document.addEventListener("DOMContentLoaded", function () {
   // mobile header menu toggle
   document.querySelector(".header-btn").onclick = function openMenu() {
-    document.querySelector(".header-container").classList.toggle("open");
+    document.querySelector(".header-container.mobile").classList.toggle("open");
   };
 
   // archive filter auto submit
@@ -16,59 +16,57 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
   const input = document.querySelector('input[type="text"]');
-  const form = input.form;
-  const storageKey = "savedInputValue";
+  if (input) {
+    const form = input.form;
+    const storageKey = "savedInputValue";
+    // Load the saved value from localStorage
+    const savedValue = localStorage.getItem(storageKey) || "";
+    input.value = savedValue;
 
-  // Load the saved value from localStorage
-  const savedValue = localStorage.getItem(storageKey) || "";
-  input.value = savedValue;
-
-  // Restore focus after page reload
-  window.addEventListener("load", () => {
-    if (input.value) {
-      input.focus();
-      input.setSelectionRange(input.value.length, input.value.length); // Move cursor to the end
-    }
-  });
-
-  // Listen for changes
-  let timeout;
-  input.addEventListener("input", function () {
-    if (this.value !== localStorage.getItem(storageKey)) {
-      localStorage.setItem(storageKey, this.value); // Save only if changed
-
-      clearTimeout(timeout);
-      if (this.value.trim() !== "") {
-        timeout = setTimeout(() => {
-          form.submit(); // Submit the form
-        }, 500); // Debounce (waits 500ms)
+    // Restore focus after page reload
+    window.addEventListener("load", () => {
+      if (input.value) {
+        input.focus();
+        input.setSelectionRange(input.value.length, input.value.length); // Move cursor to the end
       }
-    }
-  });
+    });
+
+    // Listen for changes
+    let timeout;
+    input.addEventListener("input", function () {
+      if (this.value !== localStorage.getItem(storageKey)) {
+        localStorage.setItem(storageKey, this.value); // Save only if changed
+
+        clearTimeout(timeout);
+        if (this.value.trim() !== "") {
+          timeout = setTimeout(() => {
+            form.submit(); // Submit the form
+          }, 500); // Debounce (waits 500ms)
+        }
+      }
+    });
+  }
 
   // BackgroundImage CSS push from html attribute
   const singleLogo = document.querySelector(".single-hero-tiles");
 
-  console.log(singleLogo);
   if (singleLogo) {
     const singleLogoUrl = singleLogo.getAttribute("data-logo-url");
 
     if (singleLogoUrl) {
       singleLogo.style.backgroundImage = `url(${singleLogoUrl})`;
-    } else {
-      console.log("L'attribut data-logo-url est manquant !");
     }
-  } else {
-    console.log("Élément .single-hero-tiles introuvable !");
   }
 
-  // Window resize listener for mobile/desktop header to display
+  // Window resize listener for mobile/desktop header to display & filterbox
   let windowWidth =
     window.innerWidth ||
     document.documentElement.clientWidth ||
     document.body.clientWidth;
   const mobileHeader = document.querySelector(".header-container.mobile");
   const desktopHeader = document.querySelector(".header-container.desktop");
+  const filterCont = document.querySelector(".filters-cont");
+  const filterMobile = document.querySelector(".filters-box.mobile-open");
   window.addEventListener("resize", () => {
     windowWidthChange();
   });
@@ -82,31 +80,49 @@ document.addEventListener("DOMContentLoaded", function () {
     if (windowWidth < 768) {
       mobileHeader.style.display = "flex";
       desktopHeader.style.display = "none";
+
+      if (filterMobile || filterCont) {
+        filterMobile.classList.remove("hidden");
+        filterCont.classList.add("hidden");
+      }
     } else {
       mobileHeader.style.display = "none";
       desktopHeader.style.display = "flex";
+
+      if (filterMobile || filterCont) {
+        filterMobile.classList.add("hidden");
+        filterCont.classList.remove("hidden");
+      }
     }
+  }
+
+  if (filterMobile || filterCont) {
+    filterMobile.onclick = function openFilter() {
+      filterCont.classList.remove("hidden");
+    };
   }
 
   windowWidthChange();
 
   // Mouse tracker for gradient changes
-  document.addEventListener("mousemove", (event) => {
-    const { clientX, clientY } = event;
-    const { innerWidth, innerHeight } = window;
+  if (window.innerWidth > 768) {
+    document.addEventListener("mousemove", (event) => {
+      const { clientX, clientY } = event;
+      const { innerWidth, innerHeight } = window;
 
-    const xRatio = clientX / innerWidth;
-    const yRatio = clientY / innerHeight;
+      const xRatio = clientX / innerWidth;
+      const yRatio = clientY / innerHeight;
 
-    const color1 = `rgb(${255 * xRatio}, 40, 14)`;
-    const color2 = `rgb(0, ${255 * yRatio}, 47)`;
-    const color3 = `rgb(0, 0, ${255 * (1 - xRatio)})`;
+      const color1 = `rgb(${255 * xRatio}, 40, 14)`;
+      const color2 = `rgb(0, ${255 * yRatio}, 47)`;
+      const color3 = `rgb(0, 0, ${255 * (1 - xRatio)})`;
 
-    document.documentElement.style.setProperty(
-      "--gradientColors",
-      `${color1} 0%, ${color2} 52%, ${color3} 100%`
-    );
-  });
+      document.documentElement.style.setProperty(
+        "--gradientColors",
+        `${color1} 0%, ${color2} 52%, ${color3} 100%`
+      );
+    });
+  }
 
   {
     // card random placement
@@ -177,46 +193,65 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     });
 
-    // if (window.innerWidth < 768) {
-    //   tl.to(hero, {
-    //     scale: 8,
-    //     rotate: "20deg",
-    //     duration: 2,
-    //     onComplete: () => {
-    //       hero.style.display = "none";
-    //     },
-    //   });
-    // } else {
-
-    // }
-    tl.from(scrollBg, {
-      scale: 0.8,
-      duration: 0.2,
-    });
-    tl.to(
-      hero,
-      {
-        scale: 7,
-        rotate: "20deg",
-        duration: 2,
-      },
-      "<"
-    );
-    tl.fromTo(
-      searchbar,
-      {
-        y: 0,
-        scale: 0.6,
-        opacity: 0.7,
-      },
-      {
-        // y: -100,
-        duration: 3,
-        scale: 3,
-        opacity: 1,
-      },
-      "<"
-    );
+    if (window.innerWidth < 768) {
+      tl.to(scrollBg, {
+        scale: 1.1,
+        duration: 0.2,
+      });
+      tl.to(
+        hero,
+        {
+          scale: 7,
+          rotate: "20deg",
+          duration: 2,
+        },
+        "<"
+      );
+      tl.fromTo(
+        searchbar,
+        {
+          y: 0,
+          scale: 0.6,
+          opacity: 0.7,
+        },
+        {
+          // y: -100,
+          duration: 3,
+          scale: 3,
+          opacity: 1,
+        },
+        "<"
+      );
+    } else {
+      tl.from(scrollBg, {
+        scale: 0.8,
+        duration: 0.2,
+      });
+      tl.to(
+        hero,
+        {
+          scale: 7,
+          rotate: "20deg",
+          duration: 2,
+        },
+        "<"
+      );
+      tl.fromTo(
+        searchbar,
+        {
+          y: 0,
+          scale: 0.6,
+          opacity: 0.7,
+        },
+        {
+          // y: -100,
+          duration: 3,
+          scale: 3,
+          opacity: 1,
+        },
+        "<"
+      );
+    }
   }
 
   // Changing background scrolltrigger
@@ -241,7 +276,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let fontSize = 1; // Taille initiale en vw
   const maxFontSize = 30; // Taille maximale en vw
 
-  console.log(title.offsetWidth, window.innerWidth);
   // Applique une taille initiale très basse pour éviter un effet de clignotement
   title.style.fontSize = fontSize + "vw";
 

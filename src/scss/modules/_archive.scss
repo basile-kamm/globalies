@@ -33,25 +33,25 @@
   color: $light;
 
   &.main {
-    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: $dark;
     font-family: "Pixeloid";
-    font-size: 10vw;
+    font-size: 18vw;
     font-weight: 400;
     z-index: 1;
     &.multi {
-      font-size: 7vw;
+      font-size: 8vw;
     }
   }
 
   &.difference {
     font-family: Helvetica;
-    font-size: 13vw;
+    font-size: 23vw;
     font-weight: 700;
 
     mix-blend-mode: difference;
     &.multi {
-      font-size: 10vw;
+      font-size: 12vw;
     }
   }
 }
@@ -62,7 +62,8 @@
   flex-wrap: wrap;
   width: 100%;
   justify-content: space-between;
-  gap: 2vh;
+  gap: 1vw;
+  row-gap: 2vw;
   margin-bottom: 5vh;
 }
 
@@ -73,7 +74,7 @@
   text-decoration: none;
   color: $dark;
   position: relative;
-  width: 30%;
+  width: 48%;
   border: 3px solid var(--solo-score-color);
   border-radius: 12px;
   box-shadow: 0px 0px 20px 0px rgba($light, 0.6);
@@ -147,6 +148,8 @@
 .archive-item-situation {
   font-size: 14px;
   font-weight: 600;
+  position: relative;
+  z-index: 1;
 }
 
 .archive-item-score {
@@ -166,7 +169,40 @@
   mix-blend-mode: soft-light;
 }
 
+.archive-corr {
+  color: $light;
+  font-family: "Pixeloid ";
+  font-size: 16px;
+  text-align: center;
+  opacity: 0.6;
+  position: relative;
+  bottom: 5vh;
+  left: 50vw;
+  transform: translateX(-50%);
+  z-index: 2;
+  padding: 4px 8px;
+
+  &.sous-marque {
+    opacity: 1;
+    backdrop-filter: blur(2px);
+  }
+
+  &:hover {
+    opacity: 1;
+    color: $red;
+    background: rgba($light, 0.7);
+  }
+}
+
 @include bp("md") {
+  .archive-corr {
+    font-size: 24px;
+  }
+
+  .archive-cont {
+    gap: 2vh;
+    row-gap: unset;
+  }
   .archive-item-title {
     font-size: 2vw;
   }
@@ -187,5 +223,22 @@
 
   .archive-item-score {
     font-size: 84px;
+  }
+
+  .archive-title {
+    &.main {
+      -webkit-text-stroke-width: 3px;
+      font-size: 10vw;
+      &.multi {
+        font-size: 7vw;
+      }
+    }
+
+    &.difference {
+      font-size: 13vw;
+      &.multi {
+        font-size: 10vw;
+      }
+    }
   }
 }

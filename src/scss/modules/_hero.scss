@@ -24,22 +24,23 @@
   position: absolute;
 
   &.welcome {
-    top: 10vh;
+    top: 0;
     left: 6vw;
-    width: 35vw;
+    width: 60vw;
     rotate: -15deg;
   }
 
   &.sur {
     top: 8vh;
-    left: 62vw;
-    width: 10vw;
+    left: 67vw;
+    width: 17vw;
+    rotate: 10deg;
   }
 
   &.globalies {
-    top: 15vh;
-    left: 20vw;
-    width: 35vw;
+    top: 20vh;
+    left: 30vw;
+    width: 70vw;
     rotate: 15deg;
   }
 }
@@ -51,32 +52,9 @@
   user-select: none;
 }
 
-// .hero-title {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   will-change: transform;
-
-//   mix-blend-mode: difference;
-//   &.gradient {
-//     background: $gradient-mix;
-//     background-clip: text;
-//     -webkit-background-clip: text;
-//     -webkit-text-fill-color: transparent;
-//   }
-
-//   &.outline {
-//     background: $gradient-mix;
-//     background-size: 200% 200%;
-//     color: $white;
-//     -webkit-background-clip: text;
-//     -webkit-text-stroke: 6px transparent;
-//   }
-// }
-
 .hero-cta {
   position: absolute;
-  bottom: 15vh;
+  bottom: 25vh;
   left: 50vw;
   transform: translateX(-50%);
   font-size: 4vw;
@@ -105,7 +83,7 @@
 
 @include bp("md") {
   .hero-cta {
-    bottom: 12vh;
+    bottom: 15vh;
     left: 50vw;
     font-size: 2vw;
     padding: 0 2vw 1vw;
@@ -121,6 +99,7 @@
       top: 15vh;
       left: 42vw;
       rotate: -5deg;
+      width: 10vw;
     }
 
     &.globalies {

@@ -12,23 +12,24 @@
 
 .showcase-searchbar {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  width: 75vw;
+  flex-direction: column;
+
+  gap: 1vw;
+  align-items: center;
 
   position: absolute;
-  z-index: 2;
-  top: 55vh;
+  z-index: 5;
+  top: 45vh;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.showcase-searchbar-cta {
   padding: 10px 16px;
   border-radius: 10px;
   border: 5px solid $blue;
   background: $gradient-blue;
   box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.25);
-}
-
-.showcase-searchbar-text {
   color: $dark;
   font-family: "helvetica";
   font-size: 3.5vw;
@@ -44,13 +45,14 @@
   z-index: 2;
 
   gap: 1vh;
-  row-gap: 5vh;
+  row-gap: 2vh;
+
   width: 100%;
   // transform: translateY(-20vh);
   margin-top: -50vh;
 
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 
   justify-content: space-between;
   padding: 0 3vw;
@@ -73,7 +75,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  width: 45vw;
+  width: 90%;
   padding: 2vh 3vw;
   position: relative;
   transition: border-radius 0.5s;
@@ -102,7 +104,7 @@
 }
 
 .showcase-card-logo {
-  width: 10vw;
+  width: 15vw;
   height: 25%;
   rotate: 15deg;
   opacity: 0.8;
@@ -115,16 +117,17 @@
 }
 
 .showcase-card-cta {
-  max-width: 0;
   overflow: hidden;
+  margin-left: 1vw;
   white-space: nowrap;
   transition: max-width 0.3s 0.2s;
-  text-decoration: dotted underline;
+  text-decoration-style: dotted;
+  text-decoration-line: underline;
 }
 
 .showcase-card-title {
   font-family: "inspiration";
-  font-size: 4vw;
+  font-size: 12vw;
   font-weight: 300;
   margin-bottom: 2vh;
 }
@@ -142,20 +145,19 @@
 .showcase-card-score-bg {
   position: absolute;
   svg {
-    width: 8vw;
-    height: 8vw;
+    width: 20vw;
+    height: 20vw;
   }
 }
 
 .showcase-card-score {
   position: absolute;
   z-index: 1;
-
   color: var(--solo-score-color);
-  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: $dark;
   font-family: "Pixeloid";
-  font-size: 3vw;
+  font-size: 30px;
 }
 
 .showcase-card-brands-cont {
@@ -175,7 +177,7 @@
   align-items: center;
 
   border-radius: 6px;
-  border: 12px solid rgba($dark, 0.9);
+  border: 5px solid rgba($dark, 0.9);
   background: var(--solo-score-gradient);
   box-shadow: 0px 0px 40px 0px rgba($white, 0.75);
 }
@@ -186,14 +188,14 @@
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: var(--solo-score-color);
   font-family: "Pixeloid";
-  font-size: 2.5vw;
+  font-size: 28px;
   z-index: 1;
 }
 
 .showcase-card-brand-type {
   color: $green;
   font-family: "Helvetica";
-  font-size: 1.5vw;
+  font-size: 20px;
   position: relative;
   z-index: 1;
   // mix-blend-mode: color-dodge;
@@ -208,20 +210,59 @@
 }
 
 @include bp("md") {
-  .showcase-searchbar-text {
+  .showcase-searchbar-cta {
     font-size: 1vw;
   }
 
   .showcase-searchbar {
-    width: 35vw;
+    flex-direction: row;
+    top: 55vh;
   }
 
   .showcase-card {
     padding: 1vh 2vw;
+    width: 45vw;
   }
 
   .showcase-cards-cont {
     flex-direction: row;
     flex-wrap: wrap;
+    row-gap: 5vh;
+  }
+
+  .showcase-card-title {
+    font-size: 4vw;
+  }
+
+  .showcase-card-cta {
+    max-width: 0;
+    margin-left: 0;
+  }
+
+  .showcase-card-score {
+    font-size: 3vw;
+    -webkit-text-stroke-width: 2px;
+  }
+
+  .showcase-card-score-bg {
+    svg {
+      width: 8vw;
+      height: 8vw;
+    }
+  }
+
+  .showcase-card-logo {
+    width: 10vw;
+  }
+
+  .showcase-card-brand {
+    border-width: 12px;
+  }
+
+  .showcase-card-brand-title {
+    font-size: 2.5vw;
+  }
+  .showcase-card-brand-type {
+    font-size: 1.5vw;
   }
 }

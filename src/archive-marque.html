@@ -15,7 +15,14 @@
         <div class="archive-content-bg"></div>
         <div class="container">
           <div class="row">
-            <div class="col-2">
+            <div class="col-0 col-md-2">
+              <button
+                aria-label="Open filter"
+                onclick="openFilter()"
+                class="filters-box mobile-open hidden"
+              >
+                🔍
+              </button>
               <form method="get" class="filters-cont">
                 <input
                   class="filters-box research"
@@ -81,10 +88,14 @@
                 </div>
               </form>
             </div>
-            <div class="col-10">
+            <div class="col-md-10 col-12">
               <div class="archive-title-cont">
                 <h1 class="archive-title main">Marques</h1>
                 <p class="archive-title difference">Marques</p>
+              </div>
+              <div class="archive-title-cont">
+                <h1 class="archive-title main multi">multinationales</h1>
+                <p class="archive-title difference multi">multinationales</p>
               </div>
 
               <div class="archives-cont">
@@ -179,6 +190,7 @@
             </div>
           </div>
         </div>
+        <a href="blank.html" class="archive-corr">Suggérer une correction</a>
       </div>
       <div class="archive-bg-cont">
         <img src="asset/img/usine-2.jpg?as=webp" alt="" class="archive-bg" />
