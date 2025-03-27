@@ -4,10 +4,49 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", function () {
+  // mobile header menu toggle
   document.querySelector(".header-btn").onclick = function openMenu() {
     document.querySelector(".header-container").classList.toggle("open");
   };
 
+  // archive filter auto submit
+  document.querySelectorAll("input").forEach((input) => {
+    input.addEventListener("change", function () {
+      this.form.submit();
+    });
+  });
+  const input = document.querySelector('input[type="text"]');
+  const form = input.form;
+  const storageKey = "savedInputValue";
+
+  // Load the saved value from localStorage
+  const savedValue = localStorage.getItem(storageKey) || "";
+  input.value = savedValue;
+
+  // Restore focus after page reload
+  window.addEventListener("load", () => {
+    if (input.value) {
+      input.focus();
+      input.setSelectionRange(input.value.length, input.value.length); // Move cursor to the end
+    }
+  });
+
+  // Listen for changes
+  let timeout;
+  input.addEventListener("input", function () {
+    if (this.value !== localStorage.getItem(storageKey)) {
+      localStorage.setItem(storageKey, this.value); // Save only if changed
+
+      clearTimeout(timeout);
+      if (this.value.trim() !== "") {
+        timeout = setTimeout(() => {
+          form.submit(); // Submit the form
+        }, 500); // Debounce (waits 500ms)
+      }
+    }
+  });
+
+  // BackgroundImage CSS push from html attribute
   const singleLogo = document.querySelector(".single-hero-tiles");
 
   console.log(singleLogo);
@@ -23,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Élément .single-hero-tiles introuvable !");
   }
 
+  // Window resize listener for mobile/desktop header to display
   let windowWidth =
     window.innerWidth ||
     document.documentElement.clientWidth ||
@@ -50,45 +90,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
   windowWidthChange();
 
-  // title size full width
-  const title = document.querySelector(".single-hero-title");
-
-  let fontSize = 1; // Taille initiale en vw
-  const maxFontSize = 30; // Taille maximale en vw
-
-  console.log(title.offsetWidth, window.innerWidth);
-  // Applique une taille initiale très basse pour éviter un effet de clignotement
-  title.style.fontSize = fontSize + "vw";
-
-  // Ajustement progressif
-  while (fontSize <= maxFontSize) {
-    title.style.fontSize = fontSize + "vw";
-
-    // Vérifie si l'élément dépasse la largeur de la fenêtre
-    if (title.offsetWidth >= windowWidth) {
-      fontSize -= 1; // Revenir à la dernière taille correcte
-      title.style.fontSize = fontSize + "vw";
-      break;
-    }
-
-    fontSize += 0.1;
-  }
-
   // Mouse tracker for gradient changes
   document.addEventListener("mousemove", (event) => {
     const { clientX, clientY } = event;
     const { innerWidth, innerHeight } = window;
 
-    // Normalize mouse position between 0 and 1
     const xRatio = clientX / innerWidth;
     const yRatio = clientY / innerHeight;
 
-    // Map ratios to color stops
     const color1 = `rgb(${255 * xRatio}, 40, 14)`;
     const color2 = `rgb(0, ${255 * yRatio}, 47)`;
     const color3 = `rgb(0, 0, ${255 * (1 - xRatio)})`;
 
-    // Update the CSS variable
     document.documentElement.style.setProperty(
       "--gradientColors",
       `${color1} 0%, ${color2} 52%, ${color3} 100%`
@@ -98,10 +111,13 @@ document.addEventListener("DOMContentLoaded", function () {
   {
     // card random placement
     const randomXElem = document.querySelectorAll(".random-x");
+    const randomYElem = document.querySelectorAll(".random-y");
     const cardsScore = document.querySelectorAll(".showcase-card-score-cont");
 
     gsap.set(randomXElem, {
       translateX: () => Math.random() * 60 - 30,
+    });
+    gsap.set(randomYElem, {
       translateY: () => Math.random() * 60 - 30,
     });
     // if (window.innerWidth < 768) {
@@ -131,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
         gsap.set(alternative, {
           translateX: () => Math.random() * 100 - 50,
-          translateY: () => Math.random() * 100 - 50,
+          translateY: () => Math.random() * 60 - 30,
         });
       }
     }
@@ -217,5 +233,29 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       display: "block",
     });
+  }
+
+  // title size full width
+  const title = document.querySelector(".single-hero-title");
+
+  let fontSize = 1; // Taille initiale en vw
+  const maxFontSize = 30; // Taille maximale en vw
+
+  console.log(title.offsetWidth, window.innerWidth);
+  // Applique une taille initiale très basse pour éviter un effet de clignotement
+  title.style.fontSize = fontSize + "vw";
+
+  // Ajustement progressif
+  while (fontSize <= maxFontSize) {
+    title.style.fontSize = fontSize + "vw";
+
+    // Vérifie si l'élément dépasse la largeur de la fenêtre
+    if (title.offsetWidth >= windowWidth) {
+      fontSize -= 2; // Revenir à la dernière taille correcte
+      title.style.fontSize = fontSize + "vw";
+      break;
+    }
+
+    fontSize += 0.1;
   }
 });

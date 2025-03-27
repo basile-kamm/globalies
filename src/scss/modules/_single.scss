@@ -514,7 +514,7 @@
 
 @include bp("md") {
   .single-hero-img {
-    height: unset;
+    height: 100%;
 
     inset: 0;
     bottom: unset;
@@ -524,6 +524,10 @@
   .single-alternative-section-title {
     font-size: 100px;
     margin-bottom: 0;
+  }
+
+  .single-hero-siege-social {
+    margin-bottom: 20vh;
   }
 
   .single-hero-score {
@@ -605,7 +609,7 @@
   }
 
   .single-alternative-cont {
-    gap: 5vw;
+    gap: 1vw;
     padding: 10vh 2vw 0;
   }
 

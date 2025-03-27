@@ -16,25 +16,34 @@
         <div class="container">
           <div class="row">
             <div class="col-2">
-              <div class="filters-cont">
-                <div class="filters-box research">
-                  <h2 class="filters-box-title">Rechercher...</h2>
-                </div>
+              <form method="get" class="filters-cont">
+                <input
+                  class="filters-box research"
+                  type="text"
+                  name="search"
+                  value=""
+                  placeholder="Rechercher..."
+                />
                 <div class="filters-box trier">
                   <h2 class="filters-box-title">Trier</h2>
                   <div class="filters-box-cont">
                     <label
-                      ><input type="radio" name="trier" />
+                      ><input type="radio" name="sort" value="desc" />
                       <div class="filter-box-radio"></div>
                       Score <span>(décroissant)</span></label
                     >
                     <label
-                      ><input type="radio" name="trier" />
+                      ><input type="radio" name="sort" value="asc" />
                       <div class="filter-box-radio"></div>
                       Score <span>(croissant)</span></label
                     >
                     <label
-                      ><input type="radio" checked name="trier" />
+                      ><input
+                        type="radio"
+                        checked
+                        name="sort"
+                        value="initial"
+                      />
                       <div class="filter-box-radio"></div>
                       Récemment modifié</label
                     >
@@ -44,17 +53,17 @@
                   <h2 class="filters-box-title">Filter</h2>
                   <div class="filters-box-cont">
                     <label>
-                      <input type="radio" name="filter" />
+                      <input type="radio" name="filter" value="inde" />
                       <div class="filter-box-radio"></div>
                       Marque indépendante
                     </label>
                     <label>
-                      <input type="radio" name="filter" />
+                      <input type="radio" name="filter" value="sub" />
                       <div class="filter-box-radio"></div>
                       Sous-marques
                     </label>
                     <label>
-                      <input type="radio" name="filter" checked />
+                      <input type="radio" name="filter" checked value="all" />
                       <div class="filter-box-radio"></div>
                       Toutes
                     </label>
@@ -70,26 +79,34 @@
                   <p class="filters-box-pagination-elem">5</p>
                   <p class="filters-box-pagination-elem text">page suivante</p>
                 </div>
-              </div>
+              </form>
             </div>
             <div class="col-10">
               <div class="archive-title-cont">
                 <h1 class="archive-title main">Marques</h1>
                 <p class="archive-title difference">Marques</p>
               </div>
+
               <div class="archives-cont">
                 <a href="single-marque.html" class="archive-item">
                   <h3 class="archive-item-title">Robert & CO</h3>
-                  <p class="archive-item-type">Alternative a la viande</p>
-                  <p class="archive-item-situation">Marque indépendante</p>
+                  <div class="archive-item-texts">
+                    <p class="archive-item-type">Alternative a la viande</p>
+                    <p class="archive-item-situation">Marque indépendante</p>
+                  </div>
                   <div class="archive-item-score">
                     <p>79</p>
                     <p>79</p>
                     <p>79</p>
                     <p>79</p>
                   </div>
+                  <img
+                    src="asset/img/wp_logo/activia.png"
+                    class="archive-item-logo"
+                    alt=""
+                  />
                 </a>
-                <a href="" class="archive-item">
+                <a href="single-multinationales.html" class="archive-item">
                   <h3 class="archive-item-title">Robert & CO</h3>
                   <p class="archive-item-type">Alternative a la viande</p>
                   <p class="archive-item-situation">Marque indépendante</p>
@@ -113,8 +130,10 @@
                 </a>
                 <a href="" class="archive-item">
                   <h3 class="archive-item-title">Robert & CO</h3>
-                  <p class="archive-item-type">Alternative a la viande</p>
-                  <p class="archive-item-situation">Marque indépendante</p>
+                  <div class="archive-item-texts">
+                    <p class="archive-item-type">Alternative a la viande</p>
+                    <p class="archive-item-situation">Marque indépendante</p>
+                  </div>
                   <div class="archive-item-score">
                     <p>79</p>
                     <p>79</p>
@@ -125,7 +144,9 @@
                 <a href="" class="archive-item solo-low">
                   <h3 class="archive-item-title">Robert & CO</h3>
                   <p class="archive-item-type">Marque indépendante</p>
-                  <p class="archive-item-situation">Sous-marque de nestlé</p>
+                  <p class="archive-item-situation">
+                    Sous-marque de nestlé et de cargil
+                  </p>
 
                   <div class="archive-item-score">
                     <p>79</p>

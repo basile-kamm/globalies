@@ -15,7 +15,7 @@
 .articles-cont {
   display: flex;
   flex-direction: column;
-  gap: 1vh;
+  gap: 2vh;
   align-items: center;
 }
 
@@ -23,6 +23,7 @@
   display: flex;
   background: $gradient-blue;
   width: fit-content;
+  height: fit-content;
   text-decoration: none;
   color: $dark;
   max-width: 80vw;
@@ -35,12 +36,12 @@
 
 .article-img {
   width: 10vh;
-  height: 100%;
   object-fit: cover;
 }
 
 .article-texts {
   padding: 1vh;
+  gap: 2vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
